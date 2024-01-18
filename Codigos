@@ -1,0 +1,51 @@
+def clicou() -> None:
+    nome = txtNome.get()
+    salario = float(txtSalario.get())
+    messagebox.showinfo("ALERTA","Dados enviados com Sucesso!")
+
+janela = Tk()
+janela.geometry("400x300+700+300")
+janela.title("Tela Inicial")
+labelSaudacao = Label(janela, text="Seja-Bem Vindo(a)", font=("Arial", 20), fg="purple")
+labelSaudacao.grid(row=0, column=1, sticky=N)
+labelNome = Label(janela, text="Nome:", font=("Tahoma", 16), fg="navy")
+labelNome.grid(row=1,column=0,sticky=W)
+labelSalario = Label(janela, text="Salário:", font=("Tahoma", 16), fg="navy")
+labelSalario.grid(row=2,column=0,sticky=W)
+txtNome = Entry(janela,font="Tahoma 10", width = 22)
+txtNome.grid(row=1, column=1)
+txtSalario = Entry(janela, font="Tahoma 10", width = 22)
+txtSalario.grid(row=2, column=1)
+btnEnviar = Button(janela, text="Enviar",font="Tahoma 12", width=8, bg="purple", fg="white", command=clicou)
+btnEnviar.grid(row=3, column=1)
+janela.mainloop()
+_______________________________________________________________________________________________________________
+
+from tkinter import *
+from tkinter import messagebox
+def calculoIMC():
+    peso = float(txtPeso.get())
+    altura = float(txtAltura.get())
+    calculoIMC=peso/altura**2
+    messagebox.showinfo("Seu Imc",f"Seu IMC é: {calculoIMC}")
+
+janela = Tk()
+janela.geometry("400x300+700+300")
+janela.title("Calculo IMC")
+labelSaudacao = Label(janela, text="Seja-Bem Vindo(a)", font="Arial 20", fg="Black")
+labelSaudacao.grid(row=0, column=1, sticky=N)
+labelNome = Label(janela, text="Nome:", font="Arial 15", fg="Black")
+labelNome.grid(row=1, column=0, sticky=W)
+labelPeso = Label(janela, text="Peso:", font="Arial 15", fg="Black")
+labelPeso.grid(row=2, column=0, sticky=W)
+labelAltura = Label(janela, text="Altura:", font="Arial 15", fg="Black")
+labelAltura.grid(row=3, column=0, sticky=W)
+txtNome = Entry(janela,font="Arial 15", width=25)
+txtNome.grid(row=1, column=1)
+txtPeso =Entry(janela, font="Arial 15", width=25)
+txtPeso.grid(row=2, column=1)
+txtAltura = Entry(janela,font="Arial 15", width=25)
+txtAltura.grid(row=3,column=1)
+btnEnviar = Button(janela, text="Calcular IMC",font="Arial 12",width=12, bg="Black", fg="White", command=calculoIMC)
+btnEnviar.grid(row=4, column=1)
+janela.mainloop()
